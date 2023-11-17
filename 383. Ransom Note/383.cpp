@@ -25,5 +25,4 @@ int main(){
     string ransomNote="aa", magazine="ab";
     Solution v1;
     cout << v1.find(ransomNote, magazine);
-    return 0;
 }
