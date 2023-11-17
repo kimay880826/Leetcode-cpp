@@ -22,8 +22,7 @@ class Solution{
 };
 
 int main(){
-    string ransomNote="aa", magazine="ab";
+    string ransomNote="aa", magazine="aab";
     Solution v1;
     cout << v1.find(ransomNote, magazine);
-    return 0;
 }
