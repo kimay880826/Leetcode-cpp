@@ -15,3 +15,9 @@ public:
         return ans;
     }
 };
+
+int main(){
+    Solution v1;
+    vector<int> height = {4,2,0,3,2,5};
+    cout << v1.trap(height) << endl;
+} 
