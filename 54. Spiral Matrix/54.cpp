@@ -36,8 +36,6 @@ public:
             i++;
             width--;
 
-            cout << "i=" << i << endl;
-            cout << "j=" << j << endl;
         }
         return out;
     }
