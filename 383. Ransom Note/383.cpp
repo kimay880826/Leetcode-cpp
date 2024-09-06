@@ -1,23 +1,33 @@
 #include<iostream>
 #include<vector>
+#include<unordered_map>
+#include<algorithm>
 using namespace std;
 
 class Solution{
     public:
-        bool find(string ransomNote, string magazine){
+        bool canConstruct(string ransomNote, string magazine){
+            unordered_map<char, int> hashmap;
             for(int i=0; i<ransomNote.size(); i++){
-                for(int j=0; j<magazine.size(); j++){
-
-                    if(j==magazine.size()-1 && magazine[j]!=ransomNote[i]){
-                        return false;
-                    }
-                    else if(magazine[j]==ransomNote[i]){
-                        magazine[j]=0;
-                        break;
-                    }  
+                if(hashmap.find(ransomNote[i]) == hashmap.end()){
+                    hashmap[ransomNote[i]] = 1;
+                }
+                else if(hashmap.find(ransomNote[i]) != hashmap.end()){
+                    hashmap[ransomNote[i]] += 1;
                 }
             }
-            return true;
+            for(int i=0; i<magazine.size(); i++){
+                if(hashmap.find(magazine[i]) != hashmap.end()){
+                    hashmap[magazine[i]] -= 1;
+                }
+                if(hashmap[magazine[i]] == 0){
+                    hashmap.erase(magazine[i]);
+                }
+            }
+            if(hashmap.empty()) {
+                return true;
+            }
+            return false;
         }
 };
 
