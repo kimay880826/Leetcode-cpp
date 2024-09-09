@@ -34,5 +34,5 @@ class Solution{
 int main(){
     string ransomNote="aa", magazine="aab";
     Solution v1;
-    cout << v1.find(ransomNote, magazine);
+    cout << v1.canConstruct(ransomNote, magazine);
 }
